@@ -1,30 +1,18 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Anthony Chan
+	email = anthonychan0123@gmail.com
+
 [alias]
-	a = add
-    ap = add -p
-    c = commit --verbose
-    ca = commit -a --verbose
-    cm = commit -m
-    cam = commit -a -m
-    m = commit --amend --verbose
+    unstage = reset HEAD --
+    uncommit = reset --soft HEAD~1
 
-	s = status -s
-    co = checkout
-    cob = checkout -b
+    logdog = log --decorate --oneline --graph
+    cf = cat-file -p
 
-	d = diff
-    ds = diff --stat
-    dc = diff --cached
+    hh = rev-parse HEAD
+    hhs = rev-parse --short HEAD
 
-	# list aliases
-    la = "!git config -l | grep alias | cut -c 7-"
+    cl = config --list
 
-    # Summarizing
-	dd = diff --check --dirstat --find-copies --find-renames --histogram --color
-	ll = log --graph --topo-order --abbrev-commit --date=short --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'
-
-	# Backtracking
-	unstage = reset HEAD --
-	uncommit = reset --soft HEAD~1
-
-	# Comparing
-	last = log -1 HEAD
+    rv = remote -v

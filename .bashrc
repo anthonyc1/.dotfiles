@@ -13,7 +13,7 @@ function parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
-PS1="\[$yellow\]\D{[%F %T]} \[$red\]\w\033[32m\]\$(parse_git_branch)\n\[$blue\]\u\[$re    set\]@\[$green\]\h\[$reset\]\$ "
+PS1="\[$yellow\]\D{[%F %T]} \[$red\]\w\033[32m\]\$(parse_git_branch)\n\[$blue\]\u\[$reset\]@\[$green\]\h\[$reset\]\$ "
 
 # Select default editor
 export EDITOR=/usr/bin/vim
